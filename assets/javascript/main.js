@@ -49,11 +49,37 @@ function checkList()
 //----------------------------------------------------//
 /*
 ~ Gioco dei dadi
-Generare un numero random da 1 a 6, sia per il giocatore sia per il computer.
-Stabilire il vincitore, in base a chi fa il punteggio più alto.
-scrivere quante partite ha vinto il giocatore
-scrivere quante partite ha vinto il computer
+    -Generare un numero random da 1 a 6, sia per il giocatore sia per il computer.
+    -Stabilire il vincitore, in base a chi fa il punteggio più alto.
+    -scrivere quante partite ha vinto il giocatore
+    -scrivere quante partite ha vinto il computer
 */
+
+function dicegame()
+{
+    let userDice = Math.floor(Math.random() * 6) +1;
+    let cpuDice = Math.floor(Math.random() * 6) +1;
+    
+    outputGame.innerHTML = `<h3>Buon divertimento!</h3><button id="diceButton" onclick="dicegame();">Tira!</button>`;
+
+    outputGame.innerHTML += `<p>Utente: ${userDice}</p>`;
+    outputGame.innerHTML += `<p>CPU: ${cpuDice}</p>`;
+
+
+    if(userDice > cpuDice)
+    {
+        outputGame.innerHTML += `<p>Hai vinto! <i class="fa-solid fa-face-smile"></i></p>`;
+    }
+    else if(userDice < cpuDice)
+    {
+        outputGame.innerHTML += `<p>Hai perso <i class="fa-solid fa-face-sad-cry"></i></p>`;
+    }
+    else
+    {
+        outputGame.innerHTML += `<p>Pari <i class="fa-solid fa-face-meh"></i></p>`;
+    }
+
+}
 
 
 
