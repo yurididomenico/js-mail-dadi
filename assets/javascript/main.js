@@ -54,31 +54,109 @@ function checkList()
     -scrivere quante partite ha vinto il giocatore
     -scrivere quante partite ha vinto il computer
 */
+let userVittorie = 0;
+let cpuVittorie = 0;
+let nPartiteGiocate = 0;
+
 
 function dicegame()
 {
     let userDice = Math.floor(Math.random() * 6) +1;
     let cpuDice = Math.floor(Math.random() * 6) +1;
-    
-    outputGame.innerHTML = `<h3>Buon divertimento!</h3><button id="diceButton" onclick="dicegame();">Tira!</button>`;
 
-    outputGame.innerHTML += `<p>Utente: ${userDice}</p>`;
-    outputGame.innerHTML += `<p>CPU: ${cpuDice}</p>`;
+    outputGame.innerHTML = `<h3>Buon divertimento!</h3><button id="diceButton" onclick="dicegame();">Tira!</button>`;
+    
+    switch (userDice)
+    {
+        case 1:
+            outputGame.innerHTML += `<p>Utente: <i class="fa-solid fa-dice-one fs-4 text-success"></i></p>`;
+            break;
+
+        case 2:
+            outputGame.innerHTML += `<p>Utente: <i class="fa-solid fa-dice-two fs-4 text-success"></i></p>`;
+            break;
+
+        case 3:
+            outputGame.innerHTML += `<p>Utente: <i class="fa-solid fa-dice-three fs-4 text-success"></i></p>`;
+            break;
+
+        case 4:
+            outputGame.innerHTML += `<p>Utente: <i class="fa-solid fa-dice-four fs-4 text-success"></i></p>`;
+            break;
+
+        case 5:
+            outputGame.innerHTML += `<p>Utente: <i class="fa-solid fa-dice-five fs-4 text-success"></i></p>`;
+            break;
+
+        case 6:
+            outputGame.innerHTML += `<p>Utente: <i class="fa-solid fa-dice-six fs-4 text-success"></i></p>`;
+            break;
+    }
+
+    switch (cpuDice)
+    {
+        case 1:
+            outputGame.innerHTML += `<p>CPU: <i class="fa-solid fa-dice-one fs-4 text-danger"></i></p>`;
+            break;
+
+        case 2:
+            outputGame.innerHTML += `<p>CPU: <i class="fa-solid fa-dice-two fs-4 text-danger"></i></p>`;
+            break;
+
+        case 3:
+            outputGame.innerHTML += `<p>CPU: <i class="fa-solid fa-dice-three fs-4 text-danger"></i></p>`;
+            break;
+
+        case 4:
+            outputGame.innerHTML += `<p>CPU: <i class="fa-solid fa-dice-four fs-4 text-danger"></i></p>`;
+            break;
+
+        case 5:
+            outputGame.innerHTML += `<p>CPU: <i class="fa-solid fa-dice-five fs-4 text-danger"></i></p>`;
+            break;
+
+        case 6:
+            outputGame.innerHTML += `<p>CPU: <i class="fa-solid fa-dice-six fs-4 text-danger"></i></p>`;
+            break;
+    }
+
+
+    // outputGame.innerHTML += `<p>Utente: ${userDice}</p>`;
+    // outputGame.innerHTML += `<p>CPU: ${cpuDice}</p>`;
 
 
     if(userDice > cpuDice)
     {
-        outputGame.innerHTML += `<p>Hai vinto! <i class="fa-solid fa-face-smile"></i></p>`;
+        outputGame.innerHTML += `<p class="bg-success p-1 text-white text-center">Hai vinto!</p>`;
+        userVittorie++;
+        outputGame.innerHTML += `<p>Vittorie Utente: ${userVittorie}</p>`;
+        outputGame.innerHTML += `<p>Vittorie Cpu: ${cpuVittorie}</p>`;
     }
     else if(userDice < cpuDice)
     {
-        outputGame.innerHTML += `<p>Hai perso <i class="fa-solid fa-face-sad-cry"></i></p>`;
+        outputGame.innerHTML += `<p class="bg-danger p-1 text-white text-center">Hai perso</p>`;
+        cpuVittorie++;
+        outputGame.innerHTML += `<p>Vittorie Utente: ${userVittorie}</p>`;
+        outputGame.innerHTML += `<p>Vittorie Cpu: ${cpuVittorie}</p>`;
     }
     else
     {
-        outputGame.innerHTML += `<p>Pari <i class="fa-solid fa-face-meh"></i></p>`;
+        outputGame.innerHTML += `<p class="bg-warning p-1 text-white text-center">Pari</p>`;
+    
+        outputGame.innerHTML += `<p>Vittorie Utente: ${userVittorie}</p>`;
+        outputGame.innerHTML += `<p>Vittorie Cpu: ${cpuVittorie}</p>`;
     }
 
+    nPartiteGiocate++;
+}
+
+
+
+function risultati()
+{
+    let outputPartite = document.getElementById('risultati');    
+    outputPartite.innerHTML = `<p>Numero partite giocate: ${nPartiteGiocate}</p>`;
+    outputPartite.innerHTML += `<button onclick="risultati(); return false">Partite Giocate</button>`;
 }
 
 
