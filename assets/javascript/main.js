@@ -15,13 +15,39 @@ scrivere quante partite ha vinto il computer
 
 console.log("Ciao!");
 
-let userMail = ["ciccio@gmail.it", "ydd@gmail.it", "daryan@gmail.it", "coco@gmail.it", "a@gmail.it", ]
-let inputUserMail = document.getElementById('inputUserMail');
+let userMail = ["test", "test", "test", "ciccio@gmail.it", "ydd@gmail.it", "daryan@gmail.it"]
+let outputDiv = document.getElementById('outputDiv');
+
+
 
 function checkList()
 {
-    console.log(inputUserMail.value);
+    // Prendo il valore inserito dall'utente
+    let inputUserMail = document.getElementById('inputUserMail').value;
+    // Creo una variabile flag
+    let check = false;
+
+
+    // Controllo il vettore con un ciclo for
+    for(let i=0; i<userMail.length; i++)
+    {
+        // outputDiv.innerHTML += `<p>Utente: ${userMail[i]}</p>`;
+        if(inputUserMail == userMail[i])
+        {
+            check = true;
+        }
+    }
     
+
+    // Aggiungo una condizione èer l'output
+    if(check == true)
+    {
+        outputDiv.innerHTML += `<p>L'utente è presente nella lista!</p>`;
+    }
+    else
+    {
+        outputDiv.innerHTML += `<p>L'utente è inesistente!</p>`;
+    }
 }
 
 
