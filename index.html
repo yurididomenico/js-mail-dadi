@@ -20,16 +20,28 @@
 </head>
 
 <body>
+  <h1 class="bg-warning bg-gradient p-3 mb-3">YDD - Dices <i class="fa-solid fa-dice"></i></h1>
   <form action="">
-    <label for="userMail"></label>
-    <input type="text" id="inputUserMail">
+    <div class="mb-3">
+      <h3>Email</h3>
+      <input type="text" id="inputUserMail">
+    </div>
 
-    <button onclick="checkList(); return false">Cerca</button>
-    <button onclick="refresh()">Reset</button>
+    <div>
+      <button onclick="checkList(); return false">Cerca</button>
+      <button onclick="refresh()">Reset</button>
+    </div>
   </form>
 
-  <div id="outputDiv">
+  <div id="outputDiv" class="d-flex justify-content-center" >
 
+  </div>
+
+  <hr class="d-none" id="linea">
+
+  <div id="gameDice" class=" d-none">
+    <h3>Buon divertimento!</h3>
+    <button id="diceButton" onclick="dicegame();"></button>
   </div>
 
   <script src="./assets/javascript/main.js"></script>
