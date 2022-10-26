@@ -54,18 +54,23 @@ function checkList()
     -scrivere quante partite ha vinto il giocatore
     -scrivere quante partite ha vinto il computer
 */
+
+// Dichiaro variabili
 let userVittorie = 0;
 let cpuVittorie = 0;
 let nPartiteGiocate = 0;
 
-
+// Funzione lanciodadi
 function dicegame()
 {
+    // assegno valori random da 1 a 6 per i dadi
     let userDice = Math.floor(Math.random() * 6) +1;
     let cpuDice = Math.floor(Math.random() * 6) +1;
 
+    //scrivo nell'html un testo ed un bottone(lancio)
     outputGame.innerHTML = `<h3>Buon divertimento!</h3><button id="diceButton" onclick="dicegame();">Tira!</button>`;
     
+    //condizione switch per inserire icone di dadi al posto dei numeri (utente)
     switch (userDice)
     {
         case 1:
@@ -93,6 +98,7 @@ function dicegame()
             break;
     }
 
+    //condizione switch per inserire icone di dadi al posto dei numeri (computer)
     switch (cpuDice)
     {
         case 1:
@@ -120,11 +126,7 @@ function dicegame()
             break;
     }
 
-
-    // outputGame.innerHTML += `<p>Utente: ${userDice}</p>`;
-    // outputGame.innerHTML += `<p>CPU: ${cpuDice}</p>`;
-
-
+    //Controlli per la vittoria o sconfitta dei partecipanti
     if(userDice > cpuDice)
     {
         outputGame.innerHTML += `<p class="bg-success p-1 text-white text-center">Hai vinto!</p>`;
@@ -151,7 +153,7 @@ function dicegame()
 }
 
 
-
+// Funzione Stampa numero partite giocate
 function risultati()
 {
     let outputPartite = document.getElementById('risultati');    
