@@ -31,13 +31,13 @@ function checkList()
     // Aggiungo una condizione per l'output
     if(check == true)
     {
-        outputDiv.innerHTML += `<p class="bg-success text-white p-3 rounded">L'utente è presente nella lista!</p>`;
+        outputDiv.innerHTML = `<p class="bg-success text-white p-3 rounded">L'utente è presente nella lista!</p>`;
         linea.classList.remove('d-none');
         outputGame.classList.remove('d-none');
     }   
     else
     {
-        outputDiv.innerHTML += `<p class="bg-danger text-white p-3 rounded">L'utente è inesistente!</p>`;
+        outputDiv.innerHTML = `<p class="bg-danger text-white p-3 rounded">L'utente è inesistente!</p>`;
         linea.classList.remove('d-none');
         userMail.push(inputUserMail);
         outputGame.classList.remove('d-none');

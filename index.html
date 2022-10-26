@@ -20,32 +20,37 @@
 </head>
 
 <body>
-  <h1 class="bg-warning bg-gradient p-3 mb-3">YDD - Dices <i class="fa-solid fa-dice"></i></h1>
-  <form action="">
-    <div class="mb-3">
-      <h3>Email</h3>
-      <input type="text" id="inputUserMail">
+  <div class="bg-warning bg-gradient">
+    <h1 class="container p-3 mb-3">YDD - Dices <i class="fa-solid fa-dice"></i></h1>
+  </div>
+  <div class="container">
+    <form action="">
+      <div class="mb-3">
+        <h3>Email</h3>
+        <input type="text" id="inputUserMail">
+      </div>
+
+      <div>
+        <button onclick="checkList(); return false">Cerca</button>
+        <button onclick="refresh()">Reset</button>
+      </div>
+    </form>
+
+    <div id="outputDiv" class="d-flex justify-content-center">
+
     </div>
 
-    <div>
-      <button onclick="checkList(); return false">Cerca</button>
-      <button onclick="refresh()">Reset</button>
+    <hr class="d-none" id="linea">
+
+    <div id="gameDice" class=" d-none">
+      <h3>Buon divertimento!</h3>
+      <button id="diceButton" onclick="dicegame();">Tira!</button>
     </div>
-  </form>
 
-  <div id="outputDiv" class="d-flex justify-content-center" >
+    <div id="risultati">
+      <button onclick="risultati(); return false" class="my-3">Partite Giocate</button>
+    </div>
 
-  </div>
-
-  <hr class="d-none" id="linea">
-
-  <div id="gameDice" class=" d-none">
-    <h3>Buon divertimento!</h3>
-    <button id="diceButton" onclick="dicegame();">Tira!</button>
-  </div>
-
-  <div id="risultati">
-    <button onclick="risultati(); return false" class="my-3">Partite Giocate</button>
   </div>
 
   <script src="./assets/javascript/main.js"></script>
